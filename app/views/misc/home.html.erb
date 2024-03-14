@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <h1>Cities</h1>
 
 <ul id="cities_list">
@@ -8,10 +9,111 @@
   <li id="jfk" class="east">New York</li>
   <li id="sfo" class="west">San Francisco</li>
 </ul>
-
+<div id="bye">Click me</div>
 <script>
   // Write your JS here.
   // Open the JS console and refresh the page to see the output.
+  console.log("howdy");
+  console.log("world");
 
+  console.log(`Your lucky number is ${7 * 6}`);
   
+  // defining a variable
+
+  let name = "Alice";
+
+  console.log(`howdy ${name}!`);
+
+  name = "Bob";
+
+  console.log(`hi ${name}!`)
+
+  // unlike in Ruby where constants are all caps, in JS use the const variable 
+  const pi = 3.14;
+  console.log(pi);
+
+  // Multi-word variable/method naming in JS is in lowerCamelCase, not snake_case
+  let aReallyLongVariableName = 42;
+  console.log(aReallyLongVariableName);
+
+  // Defining and calling methods
+  function greet() {
+    console.log("howdy!");
+  }
+
+  greet();
+
+  // Methods that accept arguments passed into the parameters
+
+  function greet(name) {
+    console.log(`howdy ${name}!`);
+  }
+
+  greet("Alice");
+
+  // Increment a value:
+
+  let x = 5;
+
+  x++ // x is now 6
+
+  // For loops
+  for (let i = 2; i < 6; i++) {
+    console.log(i * i);
+  }
+
+  // Arrays
+  let fruits = ["apples", "oranges", "bananas"];
+  console.log(fruits[2]);
+  console.log(fruits.length);
+
+  // Methods that accept blocks of code
+  let fruits2 = ["apples", "oranges", "cherries"];
+
+  fruits2.forEach(function(fruit) {
+    console.log(`I love ${fruit}!`);
+  });
+
+  // Random numbers
+
+  let win_probability = Math.random();
+  console.log(win_probability)
+
+  let dice_roll = Math.floor(Math.random() * 6);
+  console.log(dice_roll);
+
+  // Conditionals
+  const moves = ["rock", "paper", "scissors"];
+
+  let random_index = Math.floor(Math.random() * 3);
+
+  let computer_move = moves[random_index];
+
+  console.log(`The computer played ${computer_move}.`);
+
+  if (computer_move === "rock") {
+    console.log("You tied.");
+  } else if (computer_move === "paper") {
+    console.log("You lost.");
+  } else {
+    console.log("You won.");
+  }
+
+  // FizzBuzz
+  for(let i = 1; i <= 100; i++) { 
+      if(i % 3 === 0 && i % 5 === 0) {
+        console.log("fizzbuzz");
+      } else if (i % 5 === 0) {
+        console.log("buzz");
+      } else if (i % 3 === 0) {
+        console.log("fizz");
+      } else {
+        console.log(i);
+      }
+  }
+  
+$("body").on("click", "#bye", function() {
+  $(".west").slideToggle();
+});
+
 </script>
